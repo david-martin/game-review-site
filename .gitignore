@@ -1,1 +1,16 @@
-node_modules
+# Node modules
+node_modules/
+.pnp
+.pnp.js
+
+# Yarn files
+yarn-error.log
+yarn.lock
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variables file
+.env
