@@ -1,12 +1,18 @@
 import React from 'react';
-import { Button } from '@patternfly/react-core';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import GameReviewsPage from './GameReviewsPage'; // List of reviews page
+import GameReviewPage from './GameReviewPage'; // Single review page
+import HomePage from './HomePage'; // Home page
 
 const App: React.FC = () => {
   return (
-    <div>
-      <h1>Welcome to the Game Review Site</h1>
-      <Button variant="primary">Click Me</Button>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/reviews" element={<GameReviewsPage />} />
+        <Route path="/review/:game_id" element={<GameReviewPage />} /> {/* Route with game_id */}
+      </Routes>
+    </Router>
   );
 };
 

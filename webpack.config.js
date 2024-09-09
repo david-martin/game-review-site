@@ -2,10 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index.tsx', // Entry point for your app
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/', // Important to serve the app correctly
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -29,7 +30,8 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: './dist',
-    port: 3000,
+    static: './dist', // Serve static files from 'dist'
+    historyApiFallback: true, // This is what fixes the issue
+    port: 3000, // Your development server's port
   },
 };

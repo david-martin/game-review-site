@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';  // Updated import
 import App from './App';
 import '@patternfly/react-core/dist/styles/base.css';
+import './styles/retro.css';
 
 // Get the root DOM element
 const container = document.getElementById('root');

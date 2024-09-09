@@ -1,0 +1,49 @@
+/* General page background and text */
+body {
+  background-color: #000000;
+  /* Dark background */
+  color: #00FF00;
+  /* Neon green text for retro look */
+  font-family: 'Press Start 2P', monospace, sans-serif;
+  /* Fallback to monospace for similar appearance */
+  font-size: 14px;
+  /* Small font to simulate old computers */
+  line-height: 1.5;
+}
+
+
+/* Links */
+a {
+  color: #00FF00;
+  /* Same green as the text */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFFFFF;
+  /* White on hover */
+}
+
+/* Boxy containers for sections */
+.container {
+  border: 2px solid #00FF00;
+  padding: 10px;
+  margin: 20px;
+  background-color: #111111;
+  /* Slightly lighter background */
+}
+
+/* Buttons */
+button {
+  background-color: #00FF00;
+  color: #000000;
+  border: 2px solid #00FF00;
+  padding: 8px 12px;
+  font-family: 'Press Start 2P', sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+}
