@@ -1,12 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isProd = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: './src/index.tsx', // Entry point for your app
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/', // Important to serve the app correctly
+    publicPath: isProd ? '/game-review-site/' : '/', // Dynamic publicPath based on the environment
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
