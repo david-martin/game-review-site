@@ -1,0 +1,23 @@
+/* Stars.css */
+.stars {
+  display: inline-block;
+}
+
+.star-icon {
+  width: 16px; /* Adjust size as needed */
+  height: 16px; /* Adjust size as needed */
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.star-icon.full {
+  color: #FFFF00; /* Yellow for filled stars */
+}
+
+.star-icon.empty {
+  color: #666666; /* Grey for empty stars */
+}
+
+.unrated-label {
+  color: #FF0000; /* Red for "Unrated" */
+}

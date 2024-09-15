@@ -1,7 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import './styles/reviews.css'; // Styles for pixelated table and retro hover effect
-import reviews, { GameReview } from './reviews'; // Import the reviews
+import { calculateAverageRating } from './utils/reviews';
+import reviews from './data/reviews';
+import Stars from './components/reviews/stars';
+import NavBar from './components/navbar/navbar';
 
 const GameReviewPage: React.FC = () => {
   const { game_id } = useParams<{ game_id: string }>(); // Ensure game_id is a string
@@ -13,30 +16,26 @@ const GameReviewPage: React.FC = () => {
   }
 
   return (
-    <div className="review-container">
-      <h1>{gameReview.title} - {gameReview.platform}</h1>
+    <div className="page-container">
+      <NavBar />
+      <div className="review-container">
+        <h1>{gameReview.title} - {gameReview.platform}</h1>
 
-      {gameReview.unrated ? (
-        <p><strong>Unrated</strong></p>
-      ) : (
-        <>
-          <p>Graphics: {renderStars(gameReview.graphics ?? 0)}</p>
-          <p>Gameplay: {renderStars(gameReview.gameplay ?? 0)}</p>
-          <p>Story: {renderStars(gameReview.story ?? 0)}</p>
-        </>
-      )}
+        {gameReview.unrated ? (
+          <p><span className="unrated-label" > Unrated </span></p>
+        ) : (
+          <>
+            <p>Graphics: <Stars rating={gameReview.graphics}/></p>
+            <p>Gameplay: <Stars rating={gameReview.gameplay}/></p>
+            <p>Story: <Stars rating={gameReview.story}/></p>
+            <p>Overall: <Stars rating={calculateAverageRating(gameReview)}/></p>
+          </>
+        )}
 
-      <p>{gameReview.comments ? gameReview.comments : 'Overall, a retro classic!'}</p>
-    </div>
+        <p>{gameReview.comments ? gameReview.comments : 'Overall, a retro classic!'}</p>
+      </div>
+    </div >
   );
-};
-
-const renderStars = (rating: number) => {
-  const stars = [];
-  for (let i = 0; i < 5; i++) {
-    stars.push(<span key={i} className={i < rating ? 'star full' : 'star empty'}>★</span>);
-  }
-  return stars;
 };
 
 export default GameReviewPage;

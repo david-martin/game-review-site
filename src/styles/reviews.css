@@ -1,87 +1,100 @@
 /* General review page styling */
-.review-container {
-    color: #00FF00;
-    background-color: #000000;
-    font-family: 'Press Start 2P', sans-serif;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+.page-container {
+  max-width: 800px;
+  padding: 20px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Press Start 2P', sans-serif;
+  color: #00FF00;
+}
+
+.recent-reviews {
+  list-style: none;
+  padding: 0;
+}
+
+.review-card {
+  background-color: #000;
+  /* Retro black */
+  color: #00FF00;
+  /* Retro green */
+  padding: 15px;
+  margin: 20px 0;
+  border: 2px solid #00FF00;
+  /* Retro green border */
+  border-radius: 5px;
+}
+
+.review-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-date {
+  font-size: 0.9em;
+  color: #FFFF00;
+  /* Retro yellow */
+}
+
+.review-comments {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.view-all-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #00FF00;
+  text-decoration: none;
+}
+
+.view-all-link:hover {
+  color: #FF0000;
 }
 
 /* Game art styling */
 .game-art {
-    width: 100%;
-    height: auto;
-    border: 4px solid #00FF00;
-    margin-bottom: 20px;
-}
-
-/* Star ratings */
-.star-rating {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.star {
-    display: inline-block;
-    margin-right: 5px;
-}
-
-/* Styling for Unrated label */
-.unrated-label {
-    color: #FF0000;
-    /* Red color for Unrated */
-    font-weight: bold;
-    font-family: 'Press Start 2P', sans-serif;
-}
-
-/* Star ratings */
-.star.full {
-    color: #FFD700;
-    /* Gold for filled stars */
-}
-
-.star.empty {
-    color: #444444;
-    /* Gray for empty stars */
+  width: 100%;
+  height: auto;
+  border: 4px solid #00FF00;
+  margin-bottom: 20px;
 }
 
 /* Section styling */
 .review-section {
-    margin-bottom: 30px;
-}
-
-.review-thoughts {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #FFFFFF;
+  margin-bottom: 30px;
 }
 
 /* Table styling for the reviews */
 .reviews-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Press Start 2P', sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Press Start 2P', sans-serif;
 }
 
 .reviews-table th,
 .reviews-table td {
-    border: 1px solid #00FF00;
-    padding: 10px;
-    text-align: left;
-    color: #00FF00;
+  border: 1px solid #00FF00;
+  padding: 10px;
+  text-align: left;
+  color: #00FF00;
 }
 
 .reviews-table th {
-    background-color: #111111;
+  background-color: #111111;
 }
 
 .review-row {
-    transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 /* Retro hover effect */
 .review-row:hover {
-    background-color: #333333;
-    color: #FFFFFF;
+  background-color: #333333;
+  color: #FFFFFF;
 }
