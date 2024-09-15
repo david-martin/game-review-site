@@ -29,6 +29,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      publicPath: isProd ? '/game-review-site/' : '/', // Ensure HtmlWebpackPlugin uses the correct publicPath
     }),
   ],
   devServer: {
