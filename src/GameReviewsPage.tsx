@@ -1,14 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/reviews.css'; // Styles for pixelated table and retro hover effect
-
-// Example list of reviewed games (this could come from an API or state later)
-const gameReviews = [
-  { id: 'c64-3d-pinball', title: '3D Pinball', platform: 'C64', overallRating: 4 },
-  { id: 'nes-super-mario', title: 'Super Mario Bros', platform: 'NES', overallRating: 5 },
-  { id: 'snes-chrono-trigger', title: 'Chrono Trigger', platform: 'SNES', overallRating: 5 },
-  { id: 'unrated-game-example', title: 'Some Unfinished Game', platform: 'PS4', overallRating: null },
-];
+import reviews from './reviews'; // Import the reviews
 
 const GameReviewsPage: React.FC = () => {
   return (
@@ -23,13 +16,13 @@ const GameReviewsPage: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {gameReviews.map((game) => (
+          {reviews.map((game) => (
             <tr key={game.id} className="review-row">
               <td>
                 <Link to={`/review/${game.id}`}>{game.title}</Link>
               </td>
               <td>{game.platform}</td>
-              <td>{renderStars(game.overallRating)}</td>
+              <td>{renderStars(game.graphics ?? game.gameplay ?? game.story ?? 0)}</td> {/* Display stars or "Unrated" */}
             </tr>
           ))}
         </tbody>
