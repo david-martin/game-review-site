@@ -26,7 +26,9 @@ jobs:
     - name: Build
       run: |
         yarn
-        yarn build
+        NODE_ENV=production yarn build
+      env:
+        NODE_ENV: production  # Ensure NODE_ENV is set for all commands in this step
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
